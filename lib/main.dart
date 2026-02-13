@@ -206,64 +206,6 @@ class _TrimScreenState extends State<TrimScreen> {
                   child: Video(controller: _controller),
                 ),
 
-                // Trim controls
-                Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Column(
-                    children: [
-                      // Start time slider
-                      Row(
-                        children: [
-                          const Text('Start: '),
-                          Expanded(
-                            child: Slider(
-                              value: _startTime.inMilliseconds.toDouble(),
-                              min: 0,
-                              max: totalMs,
-                              onChanged: (v) {
-                                final newStart = Duration(milliseconds: v.toInt());
-                                if (newStart < _endTime) {
-                                  setState(() => _startTime = newStart);
-                                  _player.seek(newStart);
-                                }
-                              },
-                            ),
-                          ),
-                          Text(_formatDuration(_startTime)),
-                        ],
-                      ),
-
-                      // End time slider
-                      Row(
-                        children: [
-                          const Text('End:   '),
-                          Expanded(
-                            child: Slider(
-                              value: _endTime.inMilliseconds.toDouble(),
-                              min: 0,
-                              max: totalMs,
-                              onChanged: (v) {
-                                final newEnd = Duration(milliseconds: v.toInt());
-                                if (newEnd > _startTime) {
-                                  setState(() => _endTime = newEnd);
-                                  _player.seek(newEnd - const Duration(milliseconds: 500));
-                                }
-                              },
-                            ),
-                          ),
-                          Text(_formatDuration(_endTime)),
-                        ],
-                      ),
-
-                      const SizedBox(height: 8),
-                      Text(
-                        'Duration: ${_formatDuration(_endTime - _startTime)}',
-                        style: Theme.of(context).textTheme.bodySmall,
-                      ),
-                    ],
-                  ),
-                ),
-
                 // Export button
                 Padding(
                   padding: const EdgeInsets.all(16),
