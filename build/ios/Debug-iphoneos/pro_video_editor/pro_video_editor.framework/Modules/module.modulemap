@@ -1,0 +1,11 @@
+framework module pro_video_editor {
+  umbrella header "pro_video_editor-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module pro_video_editor.Swift {
+  header "pro_video_editor-Swift.h"
+  requires objc
+}

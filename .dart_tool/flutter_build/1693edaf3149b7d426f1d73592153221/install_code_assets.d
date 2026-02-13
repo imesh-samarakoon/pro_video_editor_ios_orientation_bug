@@ -1,0 +1,1 @@
+ /Users/imeshsamarakoon/Desktop/flutter_pro_vid_editor_testing/video_editor_test/.dart_tool/flutter_build/1693edaf3149b7d426f1d73592153221/native_assets.json:  /Users/imeshsamarakoon/Desktop/flutter_pro_vid_editor_testing/video_editor_test/.dart_tool/hooks_runner/shared/objective_c/build/c43ab5f317/objective_c.dylib
