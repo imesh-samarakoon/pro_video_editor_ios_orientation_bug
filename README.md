@@ -1,17 +1,28 @@
-# video_editor_test
+# pro_video_editor iOS portrait videos issue
 
-A new Flutter project.
+Minimal reproduction case for .
 
-## Getting Started
+## Steps to Reproduce
 
-This project is a starting point for a Flutter application.
+1. Clone this repo
+2. Run `flutter pub get`
+3. Open `ios/Runner.xcworkspace` and set your signing team
+4. Run on a physical iOS device: `flutter run`
+5. Pick a video that was recorded in portrait mode
+6. Trim and export
+7. Observe: The resulting video has the correct dimensions (height and width), but the pixels are all rotated. 
 
-A few resources to get you started if this is your first Flutter project:
+## Expected Behavior
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+Pixels are not rotated
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Actual Behavior
+
+Pixels are rotated
+
+## Environment
+
+- Flutter: [run `flutter --version`]
+- pro_video_editor: 1.5.2
+- Device: iPhone 16e
+- iOS version: 26.2.1
